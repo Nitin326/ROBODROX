@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no ">
+	<title>ROBODROX</title>
+	<link rel="stylesheet" type="text/css" href="new.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/pdf-lib@1.4.0"></script>
+    <script src="https://unpkg.com/downloadjs@1.4.7"></script>
+    
+
+</head>
+<body>  
+       <div class="main">
+              <h1 class="name">ROBODROX</h1>
+           <div id="data"> 
+			<input type="text" id="quiz" placeholder="Enter Your Email"  required>
+            <i id="bttn" onclick="myFun()"  class="ion-android-arrow-forward next"></i>     
+          </div>
+          <div class="note"> 
+            <h3> <i class="ion-android-arrow-forward noteicon"></i> Top two participants from every quiz can contact at 7737805106 for their prize money.</h3>
+            <h3> <i class="ion-android-arrow-forward noteicon"></i> If someone is not able to get the certificate then contact at 8505053375.</h3>	      
+          </div>
+
+       </div>
+
+       <script>
+       const { degrees, PDFDocument, rgb, StandardFonts } = PDFLib
+
+async function modifyPdf(name) {
+  // Fetch an existing PDF document
+   
+      const existingPdfBytes = await fetch("./quiz.pdf").then(res => res.arrayBuffer())
+
+  // Load a PDFDocument from the existing PDF bytes
+  const pdfDoc = await PDFDocument.load(existingPdfBytes)
+
+  // Embed the Helvetica font
+  const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica)
+
+  // Get the first page of the document
+  const pages = pdfDoc.getPages()
+  const firstPage = pages[0]
+
+  // Get the width and height of the first page
+  const { width, height } = firstPage.getSize()
+
+  // Draw a string of text diagonally across the first page
+  firstPage.drawText(name , {
+    x: 310,
+    y: height/40  + 270,
+    size: 35,
+    font: helveticaFont,
+    color: rgb(0,0,0),
+    rotate: degrees(0),
+  })
+
+  // Serialize the PDFDocument to bytes (a Uint8Array)
+  const pdfBytes = await pdfDoc.save()
+    
+        // Trigger the browser to download the PDF document
+  download(pdfBytes, "certificate.pdf", "application/pdf");
+}
+
+//function for every email
+function myFun(){
+        
+    if( document.getElementById('quiz').value == "punit12tiwari@gmail.com" ){
+        modifyPdf('Punit Tiwari')  
+    }
+
+   else if( document.getElementById('quiz').value == "us4134269@gmail.com" ){
+        modifyPdf('Uttam Sharma')
+    }
+
+    else if( document.getElementById('quiz').value == "ns390953@gmail.com" ){
+        modifyPdf('Kanishk singh')
+    }
+
+    else if( document.getElementById('quiz').value == "tarif861538khan@gmail.com" ){
+        modifyPdf('Tarif khan')
+    }
+
+     else if( document.getElementById('quiz').value == "somiyamishra161@gmail.com" ){
+        modifyPdf('Somiya mishra')
+    }
+
+    else if( document.getElementById('quiz').value == "lksrajawat@gmail.com" ){
+        modifyPdf('Lokesh Singh Rajawat')
+    }
+
+    else if( document.getElementById('quiz').value == "vinaydadhich52@gmail.com" ){
+        modifyPdf('Vinay dadhich')
+    }
+
+    else if( document.getElementById('quiz').value == "atharraza098@gmail.com" ){
+        modifyPdf('Athar Raza')
+    }
+
+    else if( document.getElementById('quiz').value == "kushal1904sharma@gmail.com" ){
+        modifyPdf('Kushal Sharma')
+    }
+
+    else if( document.getElementById('quiz').value == "ashwinkotiya21@gmail.com" ){
+        modifyPdf('ASHWIN KOTIYA')
+    }
+
+    else if( document.getElementById('quiz').value == "chhaviprajapati141@gmail.com" ){
+        modifyPdf('Chhavi Prajapati')
+    }
+
+    else if( document.getElementById('quiz').value == "kshitize1510@gmail.com" ){
+        modifyPdf('Kshitize Agarwal')
+    }
+
+    else if( document.getElementById('quiz').value == "priyarankawat88160@gmail.com" ){
+        modifyPdf('Priyanka Rani')
+    }
+
+    else if( document.getElementById('quiz').value == "khanadil48498@gmail.com" ){
+        modifyPdf('Adil Khan')
+    }
+
+    else if( document.getElementById('quiz').value == "ajayjailiya6@gmail.com" ){
+        modifyPdf('Ajay kumar jeliya')
+    }
+
+    else if( document.getElementById('quiz').value == "kritesh16042001@gmail.com" ){
+        modifyPdf('Kritesh Vaishnav')
+    }
+
+    else if( document.getElementById('quiz').value == "khandelwalshiv022@gmail.com" ){
+        modifyPdf('Shivam khandelwal')
+    }
+
+    else if( document.getElementById('quiz').value == "thekeshavvijay@gmail.com" ){
+        modifyPdf('Keshav Vijay')
+    }
+
+    else if( document.getElementById('quiz').value == "priteshjain1009@gmail.com" ){
+        modifyPdf('Pritesh Jain')
+    }
+
+    else if( document.getElementById('quiz').value == "singh.rishabhm@gmail.com" ){
+        modifyPdf('Rishabh Singh')
+    }
+
+    else if( document.getElementById('quiz').value == "tiwariishika1412@gmail.com" ){
+        modifyPdf('Ishika Tiwari')
+    }
+
+    else if( document.getElementById('quiz').value == "www.diyavj2371@gmail.com" ){
+        modifyPdf('DIYA VIJAY')
+    }
+
+    else if( document.getElementById('quiz').value == "tushartsa2@gmail.com" ){
+        modifyPdf('Tushar Agrawal')
+    }
+
+    else if( document.getElementById('quiz').value == "priteshkothari1203@gmail.com" ){
+        modifyPdf('Pritesh Kothari')
+    }
+
+    else if( document.getElementById('quiz').value == "sd769113@gmail.com" ){
+        modifyPdf('Sandeep Kumar Srivastava')
+    }
+
+    else if( document.getElementById('quiz').value == "poonamsisodiya521@gmail.com" ){
+        modifyPdf('poonam kumari')
+    }
+
+    else if( document.getElementById('quiz').value == "faisalsania@gmail.com" ){
+        modifyPdf('Faisal khan')
+    }
+
+    else if( document.getElementById('quiz').value == "ojhaaman2222@gmail.com" ){
+        modifyPdf('Aman ojha')
+    }
+
+    else if( document.getElementById('quiz').value == "manishachoudhary752@gmail.com" ){
+        modifyPdf('Manisha Choudhary')
+    }
+
+    else if( document.getElementById('quiz').value == "gishitag.54@gmail.com" ){
+        modifyPdf('Ishita Gupta')
+    }
+
+    else if( document.getElementById('quiz').value == "monikajeengar2808@gmail.com" ){
+        modifyPdf('Monika jeengar')
+    }
+
+    else if( document.getElementById('quiz').value == "samyakofficial.adm@gmail.com" ){
+        modifyPdf('SAMYAK JAIN')
+    }
+
+    else if( document.getElementById('quiz').value == "anubhav.singh876946@gmail.com" ){
+        modifyPdf('Anubhav Singh')
+    }
+
+    else if( document.getElementById('quiz').value == "ashishsingh2882003@gmail.com" ){
+        modifyPdf('Ashish Singh')
+    }
+
+    else if( document.getElementById('quiz').value == "kanishkamaheshwari2002@gmail.com" ){
+        modifyPdf('Kanishka Maheshwari')
+    }
+
+    else if( document.getElementById('quiz').value == "ritiksaxena002017@gmail.com" ){
+        modifyPdf('Ritik Saxena')
+    }
+
+    else if( document.getElementById('quiz').value == "sanika27012002@gmail.com" ){
+        modifyPdf('Sanika Maheshwari')
+    }
+
+    else if( document.getElementById('quiz').value == "hadakrishan52.kh@gmail.com" ){
+        modifyPdf('Krishan Gopal Singh Hada')
+    }
+
+    else if( document.getElementById('quiz').value == "Abhikalodia786@gmail.com" ){
+        modifyPdf('Abhi kalodia')
+    }
+
+    else if( document.getElementById('quiz').value == "shivam2002choubisa@gmail.com" ){
+        modifyPdf('Shivam Choubisa')
+    }
+
+    else if( document.getElementById('quiz').value == "mohityadavkotri@gmail.com" ){
+        modifyPdf('Mohit Kumar Yadav')
+    }
+
+    else if( document.getElementById('quiz').value == "agarwalritika1203d@gmail.com" ){
+        modifyPdf('Ritika Agarwal')
+    }
+
+    else if( document.getElementById('quiz').value == "tejasprajapati342@gmail.com" ){
+        modifyPdf('Tejas Prajapati')
+    }
+
+    else if( document.getElementById('quiz').value == "divyanshirajpurohit42@gmail.com" ){
+        modifyPdf('Divyanshi')
+    }
+
+    else if( document.getElementById('quiz').value == "sakshamsh969@gmail.com" ){
+        modifyPdf('Saksham Sharma')
+    }
+
+    else if( document.getElementById('quiz').value == "ayushgoyal179@gmail.com" ){
+        modifyPdf('Ayush Goyal')
+    }
+
+    else if( document.getElementById('quiz').value == "ishita15112001@gmail.com" ){
+        modifyPdf('Ishita Pabbi')
+    }
+
+    else if( document.getElementById('quiz').value == "pooja.ver2390@gmail.com" ){
+        modifyPdf('Pooja Verma')
+    }
+
+    else if( document.getElementById('quiz').value == "devansh.sharma232002@gmail.com" ){
+        modifyPdf('Devansh Sharma')
+    }
+
+    else if( document.getElementById('quiz').value == "rahulbadgoti000@gmail.com" ){
+        modifyPdf('RAHUL MEENA')
+    }
+
+    else if( document.getElementById('quiz').value == "ys45600@gmail.com" ){
+        modifyPdf('YUVRAJ SINGH')
+    }
+
+    else if( document.getElementById('quiz').value == "amangoyal2904@gmail.com" ){
+        modifyPdf('Aman goyal')
+    }
+
+    else if( document.getElementById('quiz').value == "nitin332709@gmail.com" ){
+        modifyPdf('Nitin Sain')
+    }
+
+    else if( document.getElementById('quiz').value == "sharmabrijbihari4681@gmail.com" ){
+        modifyPdf('Shubhanshu Sharma')
+    }
+
+    else if( document.getElementById('quiz').value == "kabrapragati345@gmail.com" ){
+        modifyPdf('Pragati Kabra')
+    }
+
+    else if( document.getElementById('quiz').value == "gishika364@gmail.com" ){
+        modifyPdf('Ishika Goyal')
+    }
+
+    else if( document.getElementById('quiz').value == "jaykh7777@gmail.com" ){
+        modifyPdf('Jay khandelwal')
+    }
+
+    else if( document.getElementById('quiz').value == "mukulchingkumar@gmail.com" ){
+        modifyPdf('Mukul kumar')
+    }
+
+    else if( document.getElementById('quiz').value == "madhurisingh080600@gmail.com" ){
+        modifyPdf('Madhuri Singh Rajput')
+    }
+
+    else if( document.getElementById('quiz').value == "tanishjangid1808@gmail.com" ){
+        modifyPdf('Tanish jangid')
+    }
+
+    else if( document.getElementById('quiz').value == "rahulsoni2001@gmail.com" ){
+        modifyPdf('rahul soni')
+    }
+
+    else if( document.getElementById('quiz').value == "diya.20it549@rtu.ac.in" ){
+        modifyPdf('DIYA VIJAY')
+    }
+
+    else if( document.getElementById('quiz').value == "alisaniyak02@gmail.com" ){
+        modifyPdf('Saniya Ali')
+    }
+
+    else if( document.getElementById('quiz').value == "mohit.20ce038@rtu.ac.in" ){
+        modifyPdf('MOHIT KUMAR YADAV')
+    }
+
+    else if( document.getElementById('quiz').value == "kritesh.20eic524@rtu.ac.in" ){
+        modifyPdf('Kritesh Vaishnav')
+    }
+
+    else if( document.getElementById('quiz').value == "garvitagupta066@gmail.com" ){
+        modifyPdf('Garvita gupta')
+    }
+
+    else if( document.getElementById('quiz').value == "shivangnayar22@gmail.com" ){
+        modifyPdf('Shivang Nayar')
+    }
+
+    else if( document.getElementById('quiz').value == "kumarraghav810@gmail.com" ){
+        modifyPdf('Ragahv kumar')
+    }
+
+    else if( document.getElementById('quiz').value == "pritesh.20ec321@rtu.ac.in" ){
+        modifyPdf('Pritesh Jain')
+    }
+
+    else if( document.getElementById('quiz').value == "ashidubey0811@gmail.com" ){
+        modifyPdf('Ashi Dubey')
+    }
+
+    else if( document.getElementById('quiz').value == "shubhanshusharma2712@gmail.com" ){
+        modifyPdf('SHUBHANSHU SHARMA')
+    }
+
+    else if( document.getElementById('quiz').value == "anjali2002kumawat@gmail.com" ){
+        modifyPdf('Anjali kumawat')
+    }
+
+    else if( document.getElementById('quiz').value == "ishita.20cse364@rtu.ac.in" ){
+        modifyPdf('Ishita Gupta')
+    }
+
+    else if( document.getElementById('quiz').value == "shrevijainbhl@gmail.com" ){
+        modifyPdf('Shrevi jain')
+    }
+
+    else if( document.getElementById('quiz').value == "keshav97722@gmail.com" ){
+        modifyPdf('Keshav Agrawal')
+    }
+
+    else if( document.getElementById('quiz').value == "ayushgoyal353@gmail.com" ){
+        modifyPdf('Ayush Goyal')
+    }
+
+    else if( document.getElementById('quiz').value == "nishchaiya2001@gmail.com" ){
+        modifyPdf('NISHCHAIYA')
+    }
+
+    else if( document.getElementById('quiz').value == "tejas.20cse404@rtu.ac.in" ){
+        modifyPdf('Tejas Prajapati')
+    }
+
+    else if( document.getElementById('quiz').value == "gotamjat520@gmail.com" ){
+        modifyPdf('Gotam')
+    }
+
+    else if( document.getElementById('quiz').value == "naresh.20pe158@rtu.ac.in" ){
+        modifyPdf('Naresh Kumar')
+    }
+
+    else if( document.getElementById('quiz').value == "dishantarjangid@gmail.com" ){
+        modifyPdf('Dishantar Jangid')
+    }
+
+    else if( document.getElementById('quiz').value == "harsh.20eic519@rtu.ac.in" ){
+        modifyPdf('Harsh Vardhan Gautam')
+    }
+
+    else if( document.getElementById('quiz').value == "himanshi.20cse363@rtu.ac.in" ){
+        modifyPdf('Himanshi Garg')
+    }
+
+    else if( document.getElementById('quiz').value == "mohd.20me454@rtu.ac.in" ){
+        modifyPdf('MOHD Shahzma ansari')
+    }
+
+    else if( document.getElementById('quiz').value == "somiyamishra161@gmail.com" ){
+        modifyPdf('Somya mishra')
+    }
+
+    else if( document.getElementById('quiz').value == "princimittal44@gmail.com" ){
+        modifyPdf('Princi Mittal')
+    }
+
+    else if( document.getElementById('quiz').value == "jangirshashi123@gmail.com" ){
+        modifyPdf('Shashi jangir')
+    }
+
+    else if( document.getElementById('quiz').value == "hemantkumar17112018@gmail.com" ){
+        modifyPdf('Hemant kumar')
+    }
+
+    else if( document.getElementById('quiz').value == "madhur.20ec309@rtu.ac.in" ){
+        modifyPdf('Madhur bansal')
+    }
+
+    else if( document.getElementById('quiz').value == "kapilbamnawat2003@gmail.com" ){
+        modifyPdf('Kapil')
+    }
+
+    else if( document.getElementById('quiz').value == "poonam.20eic529@rtu.ac" ){
+        modifyPdf('Poonam Kumari')
+    }
+
+    else if( document.getElementById('quiz').value == "mukeshkildoliya55@gmail.com" ){
+        modifyPdf('Mukesh')
+    }
+
+    else if( document.getElementById('quiz').value == "mohammedsameer00112@gmail.com" ){
+        modifyPdf('MOHD. SAMEER')
+    }
+
+    else if( document.getElementById('quiz').value == "priyanka.20eic530@rtu.ac.in" ){
+        modifyPdf('Priyanka Rani')
+    }
+
+    else if( document.getElementById('quiz').value == "mohd.20me454@rtu.ac.in" ){
+        modifyPdf('Shahzma Ansari')
+    }
+
+    else if( document.getElementById('quiz').value == "nitigautam@426gmail.com" ){
+        modifyPdf('Niti Gautam')
+    }
+
+    else if( document.getElementById('quiz').value == "arun.20ce079@rtu.ac.in" ){
+        modifyPdf('Arun shrivastav')
+    }
+
+    else if( document.getElementById('quiz').value == "vinayaksharma6662002@gmail.com" ){
+        modifyPdf('Vinayak')
+    }
+
+    else if( document.getElementById('quiz').value == "prateekprakharsinha@gmail.com" ){
+        modifyPdf('Prateek Prakhar Sinha')
+    }
+
+    else if( document.getElementById('quiz').value == "akhileshpandeyji1416@gmail.com" ){
+        modifyPdf('Akhilesh Pandey')
+    }
+
+    else if( document.getElementById('quiz').value == "ashishaingh2882003@gmail.com" ){
+        modifyPdf('Ashish Singh')
+    }
+
+    else if( document.getElementById('quiz').value == "vinayakchittora@gmail.com" ){
+        modifyPdf('Vinayak Chittora')
+    }
+
+    else if( document.getElementById('quiz').value == "kumarraghav810@gmail.com" ){
+        modifyPdf('Raghav kumar')
+    }
+
+    else if( document.getElementById('quiz').value == "stuti.20cse401@rtu.ac.in" ){
+        modifyPdf('STUTI SINGH')
+    }
+
+    else if( document.getElementById('quiz').value == "sneha.20ee253@rtu.ac.in" ){
+        modifyPdf('Sneha Kanwar')
+    }
+
+    else if( document.getElementById('quiz').value == "tushar.20me473@rtu.ac.in" ){
+        modifyPdf('Tushar Panchal')
+    }
+
+    else if( document.getElementById('quiz').value == "ranjak.20eic351@rtu.ac.in" ){
+        modifyPdf('Ranjak Bhola')
+    }
+
+    else if( document.getElementById('quiz').value == "chhaviprajapati141@gmail.com" ){
+        modifyPdf('Chhavi')
+    }
+
+    else if( document.getElementById('quiz').value == "abhinav.20cse342@rtu.ac.in" ){
+        modifyPdf('Abhinav Tripathi')
+    }
+
+    else if( document.getElementById('quiz').value == "rohansinghhada15@gmail.com" ){
+        modifyPdf('Rohan Singh Hada')
+    }
+
+    else if( document.getElementById('quiz').value == "laveshgoyal63@gmail.com" ){
+        modifyPdf('Lovesh Kumar Gupta')
+    }
+
+    else if( document.getElementById('quiz').value == "anshikagoyal304@gmail.com" ){
+        modifyPdf('Anshika goyal')
+    }
+
+    else if( document.getElementById('quiz').value == "ashwin.20eic517@rtu.ac.in" ){
+        modifyPdf('Ashwin')
+    }
+
+    else if( document.getElementById('quiz').value == "jainabhi7374@gmail.com" ){
+        modifyPdf('Abhinav Jain')
+    }
+
+    else if( document.getElementById('quiz').value == "ashidubey@gmail.com" ){
+        modifyPdf('Ashi Dubey')
+    }
+
+    else if( document.getElementById('quiz').value == "sd769113@gmail.com" ){
+        modifyPdf('Sandeep Kumar Srivstava')
+    }
+
+    else if( document.getElementById('quiz').value == "rishbhsharma723108@gmail.com" ){
+        modifyPdf('Rishbh sharma')
+    }
+
+    else if( document.getElementById('quiz').value == "d3v3ndranagar@gmail.com" ){
+        modifyPdf('Devendra Nagar')
+    }
+
+    else if( document.getElementById('quiz').value == "sanika.20ee248@rtu.ac.in" ){
+        modifyPdf('Sanika Maheshwari')
+    }
+
+    else if( document.getElementById('quiz').value == "arhumkhan1407@gmail.com" ){
+        modifyPdf('Arhum Khan')
+    }
+
+    else if( document.getElementById('quiz').value == "jangidrohit737@gmail.com" ){
+        modifyPdf('Rohit jangid')
+    }
+
+    else if( document.getElementById('quiz').value == "akshitigarg@gmail.com" ){
+        modifyPdf('Akshiti Garg')
+    }
+
+    else if( document.getElementById('quiz').value == "rimsha28102001@gmail.com" ){
+        modifyPdf('Rimsha Ansari')
+    }
+
+    else if( document.getElementById('quiz').value == "mehramahima434@gmai.com" ){
+        modifyPdf('Mahima')
+    }
+
+    else{
+        document.getElementById('quiz').style.animation = "wiggle 0.5s 1";
+    }
+}
+    </script>
+
+</body>
+</html>
