@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no ">
 	<title>ROBODROX</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="new.css">
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap" rel="stylesheet"> 
@@ -18,11 +18,11 @@
 <body>  
        <div class="main">
               <h1 class="name">ROBODROX</h1>
-	       <div class="note"> 
-                <h3>For Certificate Enter Your Register Email and Click Next</h3>      
+              <div class="note"> 
+                <h3>Enter Your Register Email</h3>      
               </div>
            <div id="data"> 
-			<input type="text" id="quiz" placeholder="Enter Your Email"  required>
+			<input type="text" id="quiz" placeholder="Enter Your Email" autocomplete="off" required>
             <i id="bttn" onclick="myFun()"  class="ion-android-arrow-forward next"></i>     
           </div>
           <div class="note"> 
@@ -47,17 +47,19 @@ async function modifyPdf(name) {
   const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica)
 
   // Get the first page of the document
-  const pages = pdfDoc.getPages()
-  const firstPage = pages[0]
+  const pages = pdfDoc.getPages();
+  const firstPage = pages[0];
+  const textsize = 16;
+  
 
   // Get the width and height of the first page
   const { width, height } = firstPage.getSize()
 
   // Draw a string of text diagonally across the first page
   firstPage.drawText(name , {
-    x: 310,
+    x: 300,
     y: height/40  + 270,
-    size: 35,
+    size: 30,
     font: helveticaFont,
     color: rgb(0,0,0),
     rotate: degrees(0),
@@ -90,7 +92,7 @@ function myFun(){
     }
 
      else if( document.getElementById('quiz').value == "somiyamishra161@gmail.com" ){
-        modifyPdf('Somiya mishra')
+        modifyPdf('Somiya Mishra')
     }
 
     else if( document.getElementById('quiz').value == "lksrajawat@gmail.com" ){
@@ -98,7 +100,7 @@ function myFun(){
     }
 
     else if( document.getElementById('quiz').value == "vinaydadhich52@gmail.com" ){
-        modifyPdf('Vinay dadhich')
+        modifyPdf('Vinay Dadhich')
     }
 
     else if( document.getElementById('quiz').value == "atharraza098@gmail.com" ){
@@ -130,7 +132,7 @@ function myFun(){
     }
 
     else if( document.getElementById('quiz').value == "ajayjailiya6@gmail.com" ){
-        modifyPdf('Ajay kumar jeliya')
+        modifyPdf('Ajay Kumar Jeliya')
     }
 
     else if( document.getElementById('quiz').value == "kritesh16042001@gmail.com" ){
@@ -174,7 +176,7 @@ function myFun(){
     }
 
     else if( document.getElementById('quiz').value == "poonamsisodiya521@gmail.com" ){
-        modifyPdf('poonam kumari')
+        modifyPdf('Poonam kumari')
     }
 
     else if( document.getElementById('quiz').value == "faisalsania@gmail.com" ){
@@ -182,7 +184,7 @@ function myFun(){
     }
 
     else if( document.getElementById('quiz').value == "ojhaaman2222@gmail.com" ){
-        modifyPdf('Aman ojha')
+        modifyPdf('Aman Ojha')
     }
 
     else if( document.getElementById('quiz').value == "manishachoudhary752@gmail.com" ){
@@ -226,7 +228,7 @@ function myFun(){
     }
 
     else if( document.getElementById('quiz').value == "Abhikalodia786@gmail.com" ){
-        modifyPdf('Abhi kalodia')
+        modifyPdf('Abhi Kalodia')
     }
 
     else if( document.getElementById('quiz').value == "shivam2002choubisa@gmail.com" ){
@@ -278,7 +280,7 @@ function myFun(){
     }
 
     else if( document.getElementById('quiz').value == "amangoyal2904@gmail.com" ){
-        modifyPdf('Aman goyal')
+        modifyPdf('Aman Goyal')
     }
 
     else if( document.getElementById('quiz').value == "nitin332709@gmail.com" ){
@@ -314,7 +316,7 @@ function myFun(){
     }
 
     else if( document.getElementById('quiz').value == "rahulsoni2001@gmail.com" ){
-        modifyPdf('rahul soni')
+        modifyPdf('Rahul Soni')
     }
 
     else if( document.getElementById('quiz').value == "diya.20it549@rtu.ac.in" ){
@@ -334,7 +336,7 @@ function myFun(){
     }
 
     else if( document.getElementById('quiz').value == "garvitagupta066@gmail.com" ){
-        modifyPdf('Garvita gupta')
+        modifyPdf('Garvita Gupta')
     }
 
     else if( document.getElementById('quiz').value == "shivangnayar22@gmail.com" ){
@@ -366,7 +368,7 @@ function myFun(){
     }
 
     else if( document.getElementById('quiz').value == "shrevijainbhl@gmail.com" ){
-        modifyPdf('Shrevi jain')
+        modifyPdf('Shrevi Jain')
     }
 
     else if( document.getElementById('quiz').value == "keshav97722@gmail.com" ){
@@ -406,11 +408,11 @@ function myFun(){
     }
 
     else if( document.getElementById('quiz').value == "mohd.20me454@rtu.ac.in" ){
-        modifyPdf('MOHD Shahzma ansari')
+        modifyPdf('MOHD Shahzma Ansari')
     }
 
     else if( document.getElementById('quiz').value == "somiyamishra161@gmail.com" ){
-        modifyPdf('Somya mishra')
+        modifyPdf('Somya Mishra')
     }
 
     else if( document.getElementById('quiz').value == "princimittal44@gmail.com" ){
@@ -418,22 +420,22 @@ function myFun(){
     }
 
     else if( document.getElementById('quiz').value == "jangirshashi123@gmail.com" ){
-        modifyPdf('Shashi jangir')
+        modifyPdf('Shashi Jangir')
     }
 
     else if( document.getElementById('quiz').value == "hemantkumar17112018@gmail.com" ){
-        modifyPdf('Hemant kumar')
+        modifyPdf('Hemant Kumar')
     }
 
     else if( document.getElementById('quiz').value == "madhur.20ec309@rtu.ac.in" ){
-        modifyPdf('Madhur bansal')
+        modifyPdf('Madhur Bansal')
     }
 
     else if( document.getElementById('quiz').value == "kapilbamnawat2003@gmail.com" ){
         modifyPdf('Kapil')
     }
 
-    else if( document.getElementById('quiz').value == "poonam.20eic529@rtu.ac" ){
+    else if( document.getElementById('quiz').value == "poonam.20eic529@rtu.ac.in" ){
         modifyPdf('Poonam Kumari')
     }
 
@@ -482,7 +484,7 @@ function myFun(){
     }
 
     else if( document.getElementById('quiz').value == "kumarraghav810@gmail.com" ){
-        modifyPdf('Raghav kumar')
+        modifyPdf('Raghav Kumar')
     }
 
     else if( document.getElementById('quiz').value == "stuti.20cse401@rtu.ac.in" ){
@@ -538,7 +540,7 @@ function myFun(){
     }
 
     else if( document.getElementById('quiz').value == "rishbhsharma723108@gmail.com" ){
-        modifyPdf('Rishbh sharma')
+        modifyPdf('Rishbh Sharma')
     }
 
     else if( document.getElementById('quiz').value == "d3v3ndranagar@gmail.com" ){
@@ -554,7 +556,7 @@ function myFun(){
     }
 
     else if( document.getElementById('quiz').value == "jangidrohit737@gmail.com" ){
-        modifyPdf('Rohit jangid')
+        modifyPdf('Rohit Jangid')
     }
 
     else if( document.getElementById('quiz').value == "akshitigarg@gmail.com" ){
@@ -565,12 +567,13 @@ function myFun(){
         modifyPdf('Rimsha Ansari')
     }
 
-    else if( document.getElementById('quiz').value == "mehramahima434@gmai.com" ){
+    else if( document.getElementById('quiz').value == "mehramahima434@gmail.com" ){
         modifyPdf('Mahima')
     }
 
     else{
         document.getElementById('quiz').style.animation = "wiggle 0.5s 1";
+        alert("Mail Id does not exist");
     }
 }
     </script>
